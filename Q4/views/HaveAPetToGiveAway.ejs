@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 4- Have a pet to give away</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('Pet.jpg'); 
+            background-size: 105%;
+           background-position: center;
+           background-repeat: no-repeat;
+        }
+
+        header {
+            background-color: #322D29;
+            color: #EFE9E1;
+            padding: 5px;
+            position: relative;
+            text-align: center;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #fff;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+        }
+
+        header img {
+            max-width: 122px; /* Adjust the size as needed */
+            width: 122x;
+            height: auto;
+        }
+
+        nav {
+            float: left;
+            width: 20%;
+            background-color: #D1C7BD;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        nav a {
+            color: rgb(37, 37, 37); /* Set the default color for the links */
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #ff6600; /* Set the color for the links when hovered over */
+        }
+
+        section {
+            float: left;
+            width: 80%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        footer {
+            clear: both;
+            background-color: #322D29;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        footer a{
+            color:#f4f2f1;
+        }
+        footer a:hover{
+            color: #ff6600;
+        }
+        .PetForm a{
+            color: #EFE9E1;
+        }
+    </style>
+</head>
+<body>
+
+    <%- include('header') %>
+    
+         <%- include('menu') %>
+
+    <section class="PetForm">
+        <a href="/dogtogiveaway">Dog To Give Away</a> <br>
+        <a href="/cattogiveaway">Cat To Give Away</a>
+    </section>
+
+    <%- include('footer') %>
+    <script>
+        // Function to update date and time
+        function updateDateTime() {
+            var datetimeElement = document.getElementById('datetime');
+            var now = new Date();
+            var dateString = now.toDateString();
+            var timeString = now.toLocaleTimeString();
+
+            // Format date and time
+            var formattedDateTime = 'Current Date and Time: ' + dateString + ' ' + timeString;
+
+            // Update the content of the element
+            datetimeElement.textContent = formattedDateTime;
+        }
+
+        // Call the function initially to display date and time
+        updateDateTime();
+
+        // Update date and time every second
+        setInterval(updateDateTime, 1000);
+        // Get the privacy link and popup elements
+    var privacyLink = document.getElementById('privacy-link');
+    var popup = document.getElementById('popup');
+
+    // Show the popup when privacy link is clicked
+    privacyLink.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default action of the link
+        popup.style.display = 'block'; // Show the popup
+    });
+
+    // Close the popup when the close button is clicked
+    document.getElementById('close-popup').addEventListener('click', function() {
+        popup.style.display = 'none'; // Hide the popup
+    });
+    </script>
+
+</body>
+</html>

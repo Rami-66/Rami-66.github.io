@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 4 of Assignment 3</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('Puppy1.jpg'); 
+            background-size: 100%;
+           background-position: center;
+           background-repeat: no-repeat;
+             
+        }
+
+        header {
+            background-color: #322D29;
+            color: #EFE9E1;
+            padding: 5px;
+            position: relative;
+            text-align: center;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #fff;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+        }
+
+        header img {
+            max-width: 122px; /* Adjust the size as needed */
+            width: 122x;
+            height: auto;
+        }
+
+        nav {
+            float: left;
+            width: 20%;
+            background-color: #D1C7BD;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        nav a {
+            color: rgb(37, 37, 37); /* Set the default color for the links */
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #ff6600; /* Set the color for the links when hovered over */
+        }
+
+        section {
+            float: left;
+            width: 80%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        footer {
+            clear: both;
+            background-color: #322D29;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        footer a{
+            color:#f4f2f1;
+        }
+        footer a:hover{
+            color: #ff6600;
+        }
+    </style>
+</head>
+<body>
+
+    <%- include('header') %>
+
+
+
+    <%- include('menu') %>
+
+    
+    <%- include('footer') %>
+    
+    <script>
+        // Function to update date and time
+        function updateDateTime() {
+            var datetimeElement = document.getElementById('datetime');
+            var now = new Date();
+            var dateString = now.toDateString();
+            var timeString = now.toLocaleTimeString();
+
+            // Format date and time
+            var formattedDateTime = 'Current Date and Time: ' + dateString + ' ' + timeString;
+
+            // Update the content of the element
+            datetimeElement.textContent = formattedDateTime;
+        }
+
+        // Call the function initially to display date and time
+        updateDateTime();
+
+        // Update date and time every second
+        setInterval(updateDateTime, 1000);
+        // Get the privacy link and popup elements
+    var privacyLink = document.getElementById('privacy-link');
+    var popup = document.getElementById('popup');
+
+    // Show the popup when privacy link is clicked
+    privacyLink.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default action of the link
+        popup.style.display = 'block'; // Show the popup
+    });
+
+    // Close the popup when the close button is clicked
+    document.getElementById('close-popup').addEventListener('click', function() {
+        popup.style.display = 'none'; // Hide the popup
+    });
+    </script>
+
+</body>
+</html>
+<!-- Bibliography:
+- Logo: The photo was taken from 123RF.com
+ reference: https://pl.123rf.com/stock-photo/dogs_and_cats.html
+- Home page photo was taken from freepik.com
+reference: https://de.freepik.com/fotos-premium/stockfoto-eines-niedlichen-tieres_58569953.html
+- Browse Availabe Pet's photo was taken from pawtracks.com
+reference: https://www.pawtracks.com/cats/how-to-tell-if-your-cat-is-a-maine-coon-mix/
+- Find Dog/Cat photo was taken from a youtube video Fireplace Crackling Sound with Cat and Dog sleeping (Very Satisfying and Relaxing)
+reference : https://www.youtube.com/watch?v=jiKeBgh2njk
+-Dog Care photo was taken from Avatar Abyss.
+reference : https://avatars.alphacoders.com/avatars/view/306329
+- Cat Care photo was taken from Bengal cats.
+refernce : https://bengalcats.co/ask-a-vet-why-are-cats-territorial/
+- Have a pet to give away photo was taken from vecteezy.com
+reference :https://www.vecteezy.com/photo/25188627-playful-puppy-and-kitten-sitting-outdoors-enjoying-nature-beauty-generated-by-ai
+- Contact Us page photo was taken from freepik.com
+reference: https://de.freepik.com/fotos-premium/stockfoto-eines-niedlichen-tieres_58569953.html
+- Browse available pets : The image of the first pet was taken from petmd.com
+reference : https://www.petmd.com/dog/breeds/golden-retriever
+- Browse available pets : The image of the second pet was taken from dogtime.com
+reference : https://dogtime.com/puppies/43339-german-shepherd-puppies
+- Browse available pets : The image of the third pet was taken from cats.com
+reference : https://cats.com/cat-breeds/maine-coon
+- Browse available pets : The image of the fourth pet was taken from istockphoto.com
+reference : https://www.istockphoto.com/photos/brown-huskies-pictures
+-->

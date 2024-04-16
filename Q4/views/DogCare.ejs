@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title> Quesiton 4 - Dog Care </title>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('DogCare.jpg'); 
+            background-size: 100%;
+           background-position: center;
+           background-repeat: no-repeat;
+        }
+
+        header {
+            background-color: #322D29;
+            color: #EFE9E1;
+            padding: 5px;
+            position: relative;
+            text-align: center;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #fff;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+        }
+
+        header img {
+            max-width: 122px; /* Adjust the size as needed */
+            width: 122x;
+            height: auto;
+        }
+
+        nav {
+            float: left;
+            width: 20%;
+            background-color: #D1C7BD;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        nav a {
+            color: rgb(37, 37, 37); /* Set the default color for the links */
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #ff6600; /* Set the color for the links when hovered over */
+        }
+
+        section {
+            float: left;
+            width: 80%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        footer {
+            clear: both;
+            background-color: #322D29;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        footer a{
+            color:#f4f2f1;
+        }
+        footer a:hover{
+            color: #ff6600;
+        }
+        .DogCare{
+            color: #EFE9E1;
+        font-size: 17px;
+        font-style: normal;
+        }
+    </style>
+    </head>
+    <body>
+        <%- include('header') %>
+    
+        <%- include('menu') %>
+
+    
+        <section class="DogCare">
+            <ol>
+            <li><h2> Regular Exams are Vital</h2>
+            <p>Just like you, your pet can get heart problems, develop arthritis, or have a toothache.
+                 The best way to prevent such problems or catch them early is to see your veterinarian every year. </p>
+                 <p> Regular exams are the single most important way to keep pets healthy.
+                     Annual vet visits should touch on nutrition and weight control, as well as cover recommended vaccinations, parasite control, dental exam, and health screenings.</p>
+                    </li>
+        
+            <li><h2> Spay and Neuter Your Pets</h2>
+            <p> 
+                Eight million to 10 million pets end up in U.S. shelters every year. Some are lost, some have been abandoned, and some are homeless.<br><br>
+
+           Here's an easy way to avoid adding to that number — spay and neuter your cats and dogs. It's a procedure that can be performed as early as six to eight weeks of age.<br><br>
+
+          Spaying and neutering doesn't just cut down on the number of unwanted pets; it has other substantial benefits for your pet. Studies show it also lowers the risk of certain cancers and reduces a pet's risk of getting lost by decreasing the tendency to roam.
+
+            </p>
+        </li>
+       
+            <li><h2>  Prevent Parasites</h2>
+            <p> 
+        Fleas are the most common external parasite that can plague pets, and they can lead to irritated skin, hair loss, hot spots, and infection.
+        Fleas can also introduce other parasites into your cat or dog. All it takes is for your pet to swallow one flea, and it can to end up with tapeworms, the most common internal parasite affecting dogs and cats.<br><br>
+
+       Year-round prevention is key. Regular flea and intestinal parasite control, as well as heartworm prevention in endemic areas is important.<br><br>
+
+       Because some parasite medications made for dogs can be fatal to cats, talk to your vet about keeping your precious pets worm-free, flea-free — and safe.
+            </p>
+        </li>
+        
+            <li><h2> Maintain a Healthy Weight </h2>
+            <p>
+            Many dogs and cats are overweight or obese. And just like people, obesity in pets comes with health risks that include diabetes, arthritis, and cancer.<br><br>
+
+          Overfeeding is the leading cause of obesity, says Douglas, who adds that keeping our pets trim can add years to their lives.<br><br>
+
+        Because pets need far fewer calories than most of us think — as little as 185-370 a day for a small, inactive dog; just 240-350 calories daily for a 10-pound cat — talk to your vet, who can make feeding suggestions based on your pet’s age, weight, and lifestyle.
+
+
+            </p>
+        </li>
+            </ol>
+        </section>
+        
+    
+        <%- include('footer') %>
+        <script>
+            // Function to update date and time
+            function updateDateTime() {
+                var datetimeElement = document.getElementById('datetime');
+                var now = new Date();
+                var dateString = now.toDateString();
+                var timeString = now.toLocaleTimeString();
+    
+                // Format date and time
+                var formattedDateTime = 'Current Date and Time: ' + dateString + ' ' + timeString;
+    
+                // Update the content of the element
+                datetimeElement.textContent = formattedDateTime;
+            }
+    
+            // Call the function initially to display date and time
+            updateDateTime();
+    
+            // Update date and time every second
+            setInterval(updateDateTime, 1000);
+            // Get the privacy link and popup elements
+    var privacyLink = document.getElementById('privacy-link');
+    var popup = document.getElementById('popup');
+
+    // Show the popup when privacy link is clicked
+    privacyLink.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default action of the link
+        popup.style.display = 'block'; // Show the popup
+    });
+
+    // Close the popup when the close button is clicked
+    document.getElementById('close-popup').addEventListener('click', function() {
+        popup.style.display = 'none'; // Hide the popup
+    });
+        </script>
+    </body>

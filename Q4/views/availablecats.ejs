@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Question 4 -  Available Cats</title>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('Cat.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        header {
+            background-color: #322D29;
+            color: #EFE9E1;
+            padding: 5px;
+            position: relative;
+            text-align: center;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #fff;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+        }
+
+        header img {
+            max-width: 122px; /* Adjust the size as needed */
+            width: 122x;
+            height: auto;
+        }
+
+        nav {
+            float: left;
+            width: 20%;
+            background-color: #D1C7BD;
+            padding: 20px;
+            height: 222vh;
+            box-sizing: border-box;
+        }
+
+        nav a {
+            color: rgb(37, 37, 37); /* Set the default color for the links */
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #ff6600; /* Set the color for the links when hovered over */
+        }
+
+        section {
+            float: left;
+            width: 80%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        footer {
+            clear: both;
+            background-color: #322D29;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #f4f2f1;
+        }
+
+        footer a:hover {
+            color: #ff6600;
+        }
+
+        /* Style for pet container */
+        .pet-container {
+            margin-bottom: 20px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        /* Style for pet image */
+        .pet-image {
+            float: left;
+            margin-right: 20px;
+            width: 300px; /* Adjust size as needed */
+            height: auto;
+        }
+
+        /* Style for pet info */
+        .pet-info {
+            float: left;
+            width: calc(80% - 240px); /* Adjust the width accordingly */
+        }
+
+        /* Style for "Interested" button */
+        .interested-btn {
+            clear: both;
+            display: block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .interested-btn:hover {
+            background-color: #e65c00;
+        }
+    </style>
+</head>
+<body>
+    <%- include('header') %>
+    
+    <%- include('menu') %>
+
+
+
+<div class="content">
+    <h1>Available Cats</h1>
+    <% cats.forEach(function(cat) { %>
+        <p>
+            Breed: <span><b><%= cat.breed %></b></span><br>
+            Age: <span><b><%= cat.age %></b></span><br>
+            Gender: <span><b><%= cat.gender %></b></span><br>
+            Gets along with other dogs: <span><b><%= cat.otherDogs%></b></span><br>
+            Gets along with other cats: <span><b><%= cat.otherCats %></b></span><br>
+            Gets along with small children: <span><b><%= cat.smallChildren %></b></span><br>
+            <button onclick="alert('Interested in this dog!')">Interested</button>
+        </p>
+    <% }); %>
+</div>
+
+
+<%- include('footer') %>
+<script>
+    // Function to update date and time
+    function updateDateTime() {
+        var datetimeElement = document.getElementById('datetime');
+        var now = new Date();
+        var dateString = now.toDateString();
+        var timeString = now.toLocaleTimeString();
+
+        // Format date and time
+        var formattedDateTime = 'Current Date and Time: ' + dateString + ' ' + timeString;
+
+        // Update the content of the element
+        datetimeElement.textContent = formattedDateTime;
+    }
+
+    // Call the function
+    updateDateTime();
+    
+            // Update date and time every second
+            setInterval(updateDateTime, 1000);
+            // Get the privacy link and popup elements
+    var privacyLink = document.getElementById('privacy-link');
+    var popup = document.getElementById('popup');
+
+    // Show the popup when privacy link is clicked
+    privacyLink.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default action of the link
+        popup.style.display = 'block'; // Show the popup
+    });
+
+    // Close the popup when the close button is clicked
+    document.getElementById('close-popup').addEventListener('click', function() {
+        popup.style.display = 'none'; // Hide the popup
+    });
+    
+        </script>
+    </body>

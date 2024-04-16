@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Account</title>
+    
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('Puppy1.jpg'); 
+            background-size: 100%;
+           background-position: center;
+           background-repeat: no-repeat;
+             
+        }
+
+        header {
+            background-color: #322D29;
+            color: #EFE9E1;
+            padding: 5px;
+            position: relative;
+            text-align: center;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #fff;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+        }
+
+        header img {
+            max-width: 122px; /* Adjust the size as needed */
+            width: 122x;
+            height: auto;
+        }
+
+        nav {
+            float: left;
+            width: 20%;
+            background-color: #D1C7BD;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        nav a {
+            color: rgb(37, 37, 37); /* Set the default color for the links */
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #ff6600; /* Set the color for the links when hovered over */
+        }
+
+        section {
+            float: left;
+            width: 80%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        footer {
+            clear: both;
+            background-color: #322D29;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        footer a{
+            color:#f4f2f1;
+        }
+        footer a:hover{
+            color: #ff6600;
+        }
+        .container {
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            background-color: #f9f9f9; 
+            border-radius: 10px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        }
+        
+    </style>
+</head>
+<body>
+    <%- include('header') %>
+    <%- include('menu') %>
+
+    <div class="content" style="color: white; ">
+        <h1>Create an Account</h1>
+        <h3>Please create a new account:</h3>
+        <form action="/createaccount" method="post" style="margin: 0 auto; width: fit-content;">
+            <div style="margin-bottom: 10px;">
+                <label for="username">Username:</label> 
+                <input type="text" name="username" id="username">
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label for="password">Password:</label> 
+                <input type="password" name="password" id="password">
+            </div>
+            <button>Create an account</button>
+            <input type="reset" name="reset" id="reset">
+        </form>
+        <br>
+        <div>
+            <b>To create an account you must follow these requirements:</b>
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li>- The username can contain digits, upper and lower case letters.</li>
+                <li>- The password must be at least 4 characters long (characters are to be letters and digits only) and have at least one letter and at least one digit.</li>
+            </ul>
+        </div>
+        <p style="color: blue;">
+            <%= message %>
+        </p>
+    </div>
+    
+   
+    <%- include('footer') %>
+    
+</body>
+</html>

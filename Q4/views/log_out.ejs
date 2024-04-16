@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log Out</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('Puppy1.jpg'); 
+            background-size: 100%;
+           background-position: center;
+           background-repeat: no-repeat;
+        }
+
+        header {
+            background-color: #322D29;
+            color: #EFE9E1;
+            padding: 5px;
+            position: relative;
+            text-align: center;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #fff;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+        }
+
+        header img {
+            max-width: 122px; /* Adjust the size as needed */
+            width: 122x;
+            height: auto;
+        }
+
+        nav {
+            float: left;
+            width: 20%;
+            background-color: #D1C7BD;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        nav a {
+            color: rgb(37, 37, 37); /* Set the default color for the links */
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #ff6600; /* Set the color for the links when hovered over */
+        }
+
+        section {
+            float: left;
+            width: 80%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        footer {
+            clear: both;
+            background-color: #322D29;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        footer a{
+            color:#f4f2f1;
+        }
+        footer a:hover{
+            color: #ff6600;
+        }
+        .Home{
+            color: #EFE9E1;
+        }
+        .Home h1{
+            font-size: 50px;
+
+        }
+        .Home p{
+            font-size: 19px;
+        }
+        #login-message {
+            text-align: center;
+            margin-top: 20px;
+            color: #ff0000;
+        }
+        .container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+
+
+        
+
+        
+    </style>
+</head>
+<body>
+    <%- include('header') %>
+    <%- include('menu') %>
+
+    <div class="content" style="text-align: center;">
+        <h1 style="color: white;">Log out</h1>
+        <h3 style="color: white;">Are you sure you want to log out?</h3>
+        <form  action="/log_out" method="post">
+            <button type="submit" style="background-color: #ff6600; color: white;">Log Out</button>
+        </form>
+        <p style="color: white;">
+            <%= message %>
+        </p>
+    </div>
+    
+    
+    <%- include('footer') %>
+    <script >
+        // Function to update date and time
+        function updateDateTime() {
+            var datetimeElement = document.getElementById('datetime');
+            var now = new Date();
+            var dateString = now.toDateString();
+            var timeString = now.toLocaleTimeString();
+
+            // Format date and time
+            var formattedDateTime = 'Current Date and Time: ' + dateString + ' ' + timeString;
+
+            // Update the content of the element
+            datetimeElement.textContent = formattedDateTime;
+        }
+
+        // Call the function initially to display date and time
+        updateDateTime();
+
+        // Update date and time every second
+        setInterval(updateDateTime, 1000);
+        // Get the privacy link and popup elements
+    var privacyLink = document.getElementById('privacy-link');
+    var popup = document.getElementById('popup');
+
+    // Show the popup when privacy link is clicked
+    privacyLink.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default action of the link
+        popup.style.display = 'block'; // Show the popup
+    });
+
+    // Close the popup when the close button is clicked
+    document.getElementById('close-popup').addEventListener('click', function() {
+        popup.style.display = 'none'; // Hide the popup
+    });
+        document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('login-form').addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const usernameField = document.getElementById('username');
+        const passwordField = document.getElementById('password');
+
+        try {
+            const response = await fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ 
+                    username: usernameField.value, 
+                    password: passwordField.value 
+                })
+            });
+        
+            if (response.ok) {
+                window.location.href = '/giveaway';
+            } else {
+                const message = await response.text();
+                document.getElementById('login-message').textContent = message;
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again later.');
+        }
+    });
+});
+    </script>
+</body>
+</html>

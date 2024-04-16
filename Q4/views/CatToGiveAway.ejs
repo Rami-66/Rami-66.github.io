@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title> Quesiton 4 - Cat To Give Away</title>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('Pet.jpg'); 
+            background-size: 105%;
+           background-position: center;
+           background-repeat: no-repeat;
+        }
+
+        header {
+            background-color: #322D29;
+            color: #EFE9E1;
+            padding: 5px;
+            position: relative;
+            text-align: center;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #fff;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+        }
+
+        header img {
+            max-width: 122px; /* Adjust the size as needed */
+            width: 122x;
+            height: auto;
+        }
+
+        nav {
+            float: left;
+            width: 20%;
+            background-color: #D1C7BD;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        nav a {
+            color: rgb(37, 37, 37); /* Set the default color for the links */
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #ff6600; /* Set the color for the links when hovered over */
+        }
+
+        section {
+            float: left;
+            width: 80%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        footer {
+            clear: both;
+            background-color: #322D29;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        footer a{
+            color:#f4f2f1;
+        }
+        footer a:hover{
+            color: #ff6600;
+        }
+       .Info{
+        color: #EFE9E1;
+        font-size: 18px;
+        font-style: normal;
+        border-radius: 3mm;
+       }
+       .Info1{
+        color: #EFE9E1;
+        font-size: 18px;
+        font-style: normal;
+        border-radius: 3mm;
+       }
+       .comment-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .comment-section p {
+            flex: 0.35;
+           
+        }
+
+        .comment-section textarea {
+            flex: 0.4;
+        }
+      
+    </style>
+    </head>
+    <body>
+        <%- include('header') %>
+    
+         <%- include('menu') %>
+
+    
+        <section class="FindaDogCat">
+        
+            <form  action="/cattogiveaway" method="post" id="form" >
+                <fieldset class="Info1">
+                    <legend class="Cat Give Away Form" >
+                        Cat Give Away Form
+                    </legend>
+                    <p class="info" >
+                        <label for="cat_breed">Which specific cat breed are you interested in adopting ?
+                            <select name="cat_breed1" id="cat_breed">
+                                <option value="">----------Select----------</option>
+                                <option value="bengal">Bengal</option>
+                                <option value="birman">Birman</option>
+                                <option value="british shorthair">British Shorthair</option>
+                                <option value="maine coon">Maine Coon</option>
+                                <option value="ragdoll">Ragdoll</option>
+                                <option value="russian blue">Russian Blue</option>
+                                <option value="thaicat">Thai Cat</option>
+                                <option value="Doesn'tMatter">Doesn't matter</option>
+                            </select>
+                        </label>
+                    </p>
+                    <p> 
+                        Gender:
+                        <label for="male2">
+                            <input type="radio" name="cat_gender1" id="male2" value="male" required>Male
+                        </label>
+                        <label for="female2">
+                            <input type="radio" name="cat_gender1" id="female2" value="female">Female
+                        </label>
+                    </p>
+    
+                    <p> 
+                        <label for="cat_age">Preferred age of the cat?
+                            <select name="cat_age1" id="cat_age">
+                                <option value="">----------Select----------</option>
+                                <option value="0.1/2">Less than 6 months</option>
+                                <option value="1/2.1">Between 6 and 12 months</option>
+                                <option value="1.3">Between 1 and 3 years</option>
+                                <option value="4.7">Between 4 and 7 years</option>
+                                <option value="8.10">Between 8 and 10 years</option>
+                                <option value="11.14">Between 11 and 14 years</option>
+                                <option value="14">More than 14 years</option>
+                            </select>
+                        </label>
+                    </p>
+
+    
+                    <p> 
+                        Does your cat get along with other dogs?
+                        <label for="yes_other_dogs2">
+                            <input type="radio" name="cat_other_dogs1" id="yes_other_dogs2" value="yes">Yes
+                        </label>
+                        <label for="no_other_dogs2">
+                            <input type="radio" name="cat_other_dogs1" id="no_other_dogs2" value="no">No
+                        </label>
+                    </p>
+    
+                    <p> 
+                        Does your cat get along with other cats?
+                        <label for="yes_other_cats2">
+                            <input type="radio" name="cat_other_cats1" id="yes_other_cats2" value="yes">Yes
+                        </label>
+                        <label for="no_other_cats2">
+                            <input type="radio" name="cat_other_cats1" id="no_other_cats2" value="no">No
+                        </label>
+                    </p>
+    
+                    <p> 
+                        Is your cat suitable for a family with small children?
+                        <label for="yes_small_children2">
+                            <input type="radio" name="cat_small_children1" id="yes_small_children2" value="yes">Yes
+                        </label>
+                        <label for="no_small_children2">
+                            <input type="radio" name="cat_small_children1" id="no_small_children2" value="no">No
+                        </label>
+                    </p>
+    
+                    <div class="comment-section">
+                        <p>Additional information regarding your pet:</p>
+                        <textarea name="cat_comment1" id="cat_comment" cols="5" rows="8" > </textarea>
+                    </div>
+    
+                    <p>
+                        <label for="name2">Your name (Provide your full name):
+                            <input type="text" name="cat_username1" id="name2" size="30">
+                        </label>
+                    </p>
+    
+                    <p>
+                        <label for="email2">Email:
+                            <input type="email" name="cat_email1" id="email2" size="30">
+                        </label>  
+                    </p>
+    
+                    <p>
+                        <input type="submit" name="cat_submit1" id="submit2">
+                        <input type="reset" name="cat_clear1" id="clear2">
+                    </p>
+                </fieldset>
+                
+            </form>
+           
+            
+        </section>
+    
+        <%- include('footer') %>
+        <script>
+            // Function to update date and time
+            function updateDateTime() {
+                var datetimeElement = document.getElementById('datetime');
+                var now = new Date();
+                var dateString = now.toDateString();
+                var timeString = now.toLocaleTimeString();
+    
+                // Format date and time
+                var formattedDateTime = 'Current Date and Time: ' + dateString + ' ' + timeString;
+    
+                // Update the content of the element
+                datetimeElement.textContent = formattedDateTime;
+            }
+    
+            // Call the function initially to display date and time
+            updateDateTime();
+    
+            // Update date and time every second
+            setInterval(updateDateTime, 1000);
+             // Client-side form validation
+             var form = document.getElementById('giveAwayForm');
+   form.addEventListener('submit', function(event) {
+    // Validation for cat traits
+    var checkBoxes = form.querySelectorAll('input[type="checkbox"]');
+    var atLeastOneChecked = false;
+
+    checkBoxes.forEach(function(checkbox) {
+        if (checkbox.checked) {
+            atLeastOneChecked = true;
+        }
+    });
+
+    if (!atLeastOneChecked) {
+        alert('Please select at least one trait for your new pet.');
+        event.preventDefault(); // Prevent form submission
+        return; // Exit the function early if traits are not selected
+    }
+    // Validation for additional information
+    let additionalInfo = document.getElementById('additionalInfo').value.trim();
+    
+    if (additionalInfo === "") {
+        alert("Please provide additional information regarding your pet.");
+        event.preventDefault(); // Prevent form submission
+        return; // Exit the function early if additional information is not provided
+    }
+
+    // Validation for name
+    let x = document.forms["giveAwayForm"]["fname"].value.trim();
+    let y = document.forms["giveAwayForm"]["lname"].value.trim();
+    
+    if (x === "") {
+        alert("First name must be filled out");
+        event.preventDefault(); // Prevent form submission
+        return; // Exit the function early if first name is not filled
+    }
+    
+    if (y === "") {
+        alert("Last name must be filled out");
+        event.preventDefault(); // Prevent form submission
+        return; // Exit the function early if last name is not filled
+    }
+    // Validation for email
+    let email = document.forms["giveAwayForm"]["email"].value.trim();
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address.");
+        event.preventDefault(); // Prevent form submission
+        return; // Exit the function early if email is invalid
+    }
+});
+// Get the privacy link and popup elements
+var privacyLink = document.getElementById('privacy-link');
+    var popup = document.getElementById('popup');
+
+    // Show the popup when privacy link is clicked
+    privacyLink.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default action of the link
+        popup.style.display = 'block'; // Show the popup
+    });
+
+    // Close the popup when the close button is clicked
+    document.getElementById('close-popup').addEventListener('click', function() {
+        popup.style.display = 'none'; // Hide the popup
+    });
+
+        </script>
+    </body>

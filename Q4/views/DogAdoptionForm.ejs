@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title> Quesiton 4 - Dog Adoption Form </title>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('DogCat3.jpg'); 
+            background-size: 105%;
+           background-position: center;
+           background-repeat: no-repeat;
+        }
+
+        header {
+            background-color: #322D29;
+            color: #EFE9E1;
+            padding: 5px;
+            position: relative;
+            text-align: center;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #fff;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+        }
+
+        header img {
+            max-width: 122px; /* Adjust the size as needed */
+            width: 122x;
+            height: auto;
+        }
+
+        nav {
+            float: left;
+            width: 20%;
+            background-color: #D1C7BD;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        nav a {
+            color: rgb(37, 37, 37); /* Set the default color for the links */
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #ff6600; /* Set the color for the links when hovered over */
+        }
+
+        section {
+            float: left;
+            width: 80%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        footer {
+            clear: both;
+            background-color: #322D29;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        footer a{
+            color:#f4f2f1;
+        }
+        footer a:hover{
+            color: #ff6600;
+        }
+       .Info{
+        color: #EFE9E1;
+        font-size: 18px;
+        font-style: normal;
+        border-radius: 3mm;
+       }
+       .Info1{
+        color: #EFE9E1;
+        font-size: 18px;
+        font-style: normal;
+        border-radius: 3mm;
+       }
+       
+      
+    </style>
+    </head>
+    <body>
+        <%- include('header') %>
+    
+        <%- include('menu') %>
+
+    
+        <section class="FindaDogCat">
+        
+            <form action="/dogadoptionform" method="post" id="form" ><br><br>
+                <fieldset class="Info">
+                    <legend class="Dog-form">
+                        Dog Adoption Form
+                    </legend>
+                    <p class="info">
+                        Which specific dog breed are you interested in adopting ?
+                        <select name="dog_breed2" id="dog_breed_select" required>
+                            <option value="">-------Select-------</option>
+                            <option value="GermanShepherd">German Shepherd</option>
+                            <option value="GoldenRetriver">Golden Retriever</option>
+                            <option value="Beagle">Beagle</option>
+                            <option value="Husky">Husky</option>
+                            <option value="Poodle">Poodle</option>
+                            <option value="YorkshireTerrier">Yorkshire Terrier</option>
+                            <option value="Pitbull">Pitbull</option>
+                            <option value="Doesn'tMatter">Doesn't matter</option>
+                        </select>
+                    </p>
+                    <p class="info">
+                        Gender:
+                        <label> <input type="radio" name="dog_gender2" value="male" required> Male</label>
+                        <label> <input type="radio" name="dog_gender2" value="female"> Female</label>
+                        <label> <input type="radio" name="dog_gender2" value="doesn't matter choice"> Doesn't matter</label><br>
+                    </p>
+                    <p class="info">
+                        Preferred age of the dog?
+                        <select name="dog_age2" id="dog_age_select" required>
+                            <option value="">----------Select----------</option>
+                            <option value="0.1/2">Less than 6 months</option>
+                            <option value="1/2.1">Between 6 and 12 months</option>
+                            <option value="1.3">Between 1 and 3 years</option>
+                            <option value="4.7">Between 4 and 7 years</option>
+                            <option value="8.10">Between 8 and 10 years</option>
+                            <option value="11.14">Between 11 and 14 years</option>
+                            <option value="14">More than 14 years</option>
+                        </select>
+                    </p>
+                    <p>
+                        Does the dog need to get along with other dogs?   
+                        <label>
+                            <input type="radio" name="dog_other_dogs2" value="yes">Yes
+                        </label>
+                        <label>
+                            <input type="radio" name="dog_other_dogs2" value="no">No
+                        </label>
+                        <label>
+                            <input type="radio" name="dog_other_dogs2" value="doesn't matter choice">Doesn't matter choice
+                        </label>
+                    </p>
+    
+                    <p>
+                        Does the dog need to get along with other cats?   
+                        <label>
+                            <input type="radio" name="dog_other_cats2" value="yes">Yes
+                        </label>
+                        <label>
+                            <input type="radio" name="dog_other_cats2" value="no">No
+                        </label>
+                        <label>
+                            <input type="radio" name="dog_other_cats2" value="doesn't matter choice">Doesn't matter choice
+                        </label>
+                    </p>
+    
+                    <p>
+                        Does the dog need to get along with small childrens?   
+                        <label>
+                            <input type="radio" name="dog_small_children2" value="yes">Yes
+                        </label>
+                        <label>
+                            <input type="radio" name="dog_small_children2" value="no">No
+                        </label>
+                        <label>
+                            <input type="radio" name="dog_small_children2" value="doesn't matter choice">Doesn't matter choice
+                        </label>
+                    </p>
+                    <input type="submit" name="dog_submit2" value="submit1">
+                    <input type="reset" name="dog_clear2" value="reset1">
+                </fieldset>
+            </form>
+        </section>
+        
+    
+        <%- include('footer') %>
+        <script>
+            // Function to update date and time
+            function updateDateTime() {
+                var datetimeElement = document.getElementById('datetime');
+                var now = new Date();
+                var dateString = now.toDateString();
+                var timeString = now.toLocaleTimeString();
+    
+                // Format date and time
+                var formattedDateTime = 'Current Date and Time: ' + dateString + ' ' + timeString;
+    
+                // Update the content of the element
+                datetimeElement.textContent = formattedDateTime;
+            }
+    
+            // Call the function initially to display date and time
+            updateDateTime();
+    
+            // Update date and time every second
+            setInterval(updateDateTime, 1000);
+    
+            // Client-side form validation
+            var form = document.getElementById('adoptionForm');
+            form.addEventListener('submit', function(event) {
+                var requiredFields = form.querySelectorAll('[required]');
+                var checkBoxes = form.querySelectorAll('input[type="checkbox"]');
+                var isValid = true;
+                var atLeastOneChecked = false;
+    
+                requiredFields.forEach(function(field) {
+                    if (!field.value.trim()) {
+                        isValid = false;
+                        // Highlight the field with an error
+                        field.style.border = '2px solid red';
+                    }
+                });
+    
+                checkBoxes.forEach(function(checkbox) {
+                    if (checkbox.checked) {
+                        atLeastOneChecked = true;
+                    }
+                });
+    
+                if (!atLeastOneChecked) {
+                    isValid = false;
+                    alert('Please select at least one trait for your new pet.');
+                }
+    
+                if (!isValid) {
+                    event.preventDefault(); // Prevent form submission
+                }
+            });
+            // Get the privacy link and popup elements
+    var privacyLink = document.getElementById('privacy-link');
+    var popup = document.getElementById('popup');
+
+    // Show the popup when privacy link is clicked
+    privacyLink.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default action of the link
+        popup.style.display = 'block'; // Show the popup
+    });
+
+    // Close the popup when the close button is clicked
+    document.getElementById('close-popup').addEventListener('click', function() {
+        popup.style.display = 'none'; // Hide the popup
+    });
+    
+        </script>
+    </body>

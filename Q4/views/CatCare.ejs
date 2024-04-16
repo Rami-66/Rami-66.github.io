@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title> Quesiton 4 - Cat Care </title>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('CatCare.jpg'); 
+            background-size: 100%;
+           background-position: center;
+           background-repeat: no-repeat;
+        }
+
+        header {
+            background-color: #322D29;
+            color: #EFE9E1;
+            padding: 5px;
+            position: relative;
+            text-align: center;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #fff;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+        }
+
+        header img {
+            max-width: 122px; /* Adjust the size as needed */
+            width: 122x;
+            height: auto;
+        }
+
+        nav {
+            float: left;
+            width: 20%;
+            background-color: #D1C7BD;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        nav a {
+            color: rgb(37, 37, 37); /* Set the default color for the links */
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #ff6600; /* Set the color for the links when hovered over */
+        }
+
+        section {
+            float: left;
+            width: 80%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        footer {
+            clear: both;
+            background-color: #322D29;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        footer a{
+            color:#f4f2f1;
+        }
+        footer a:hover{
+            color: #ff6600;
+        }
+        .CatCare{
+            color: #EFE9E1;
+        font-size: 17px;
+        font-style: normal;
+        }
+    </style>
+    </head>
+    <body>
+        <%- include('header') %>
+    
+         <%- include('menu') %>
+
+    
+        <section class="CatCare">
+            <ol>
+                <li>
+                    <h2> Encourage the cat to use a litter box.</h2>
+                    <p> 
+                        Most cats will prefer the litter box to other parts of the house because of the texture of the litter.[2]  But, there are still steps you need to take to make sure you're offering the litter box as the best place to use the bathroom.<br>
+Place the box in a quiet spot where the cat won't be bothered by people, dogs, or loud noises.<br>
+To keep the litter box clean, make sure you scoop the litter daily, and clean the box weekly. You should also replace or refresh the litter at least once a week.<br>
+Provide enough litter boxes for more than one cat. A good rule of thumb is to have one box for each cat, plus one more. For example, if you have two cats, you need three litter boxes in different areas of the home. One cat might try to intimidate a less dominate cat away from using a single box.
+                    </p>
+                </li>
+                <li>
+                    <h2> Make the litter box a comfortable place.</h2>
+                    <p> 
+                        Don't frighten or startle your cat when they're using the box, or they may form a bad association with the box and start avoiding it. Buy a large box, even if you have to spend a little money on it. Cats are more comfortable in a larger (in area, not height) box.<br>
+Don't switch brands of litter on your cat, because cats don't like sudden change. Switching from a clay litter to a clumping litter or vice versa might upset the cat and cause them to avoid using the litter box. Don't use heavily scented litters for the same reason.
+                    </p>
+                </li>
+                <li>
+                    <h2>Take young or old cats needs into consideration. </h2>
+                    <p> 
+                        Keep in mind that kittens and older cats with arthritis or other health problems may have problems getting in and out of a box that's too tall. Use low-height boxes in an easily accessible area for kittens and cats with special needs, or buy an adjustable litter box. 
+                    </p>
+                </li>
+                <li>
+                    <h2>Provide the cat with a scratching post.  </h2>
+                    <p> 
+                        Scratching is a normal part of cat behavior, and there's no way you can train it out of them. Your cat will need one or two scratching posts to keep them from scratching up furniture, woodwork, and so on. By providing a post, you allow the cat to indulge in normal, healthy behavior.<br>
+                        Don't declaw your cat. This will cause far more problems than it will solve, and it may paralyze your cat or make them unable to walk. Cats have their claws for a reason.
+                    </p>
+                </li>
+               
+                
+            </ol>
+        </section>
+        
+    
+        <%- include('footer') %>
+        <script>
+            // Function to update date and time
+            function updateDateTime() {
+                var datetimeElement = document.getElementById('datetime');
+                var now = new Date();
+                var dateString = now.toDateString();
+                var timeString = now.toLocaleTimeString();
+    
+                // Format date and time
+                var formattedDateTime = 'Current Date and Time: ' + dateString + ' ' + timeString;
+    
+                // Update the content of the element
+                datetimeElement.textContent = formattedDateTime;
+            }
+    
+            // Call the function initially to display date and time
+            updateDateTime();
+    
+            // Update date and time every second
+            setInterval(updateDateTime, 1000);
+            // Get the privacy link and popup elements
+    var privacyLink = document.getElementById('privacy-link');
+    var popup = document.getElementById('popup');
+
+    // Show the popup when privacy link is clicked
+    privacyLink.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default action of the link
+        popup.style.display = 'block'; // Show the popup
+    });
+
+    // Close the popup when the close button is clicked
+    document.getElementById('close-popup').addEventListener('click', function() {
+        popup.style.display = 'none'; // Hide the popup
+    });
+        </script>
+    </body>
